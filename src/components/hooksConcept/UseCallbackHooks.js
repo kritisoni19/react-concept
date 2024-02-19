@@ -18,10 +18,10 @@ const addHandle = ()=>{
 }
     return (
         <>
-            <h1>Use Callback Hooks</h1>
+            <h2>Use Callback Hooks</h2>
             
             <UseCallbackHooksChild learning={learning}/>
-            <h1>{count}</h1>
+            <h2>{count}</h2>
             <button onClick={addHandle}>Add</button>
         </>
     )

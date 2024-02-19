@@ -6,8 +6,8 @@ function Child(){
     const useName1 = useContext(myContext1);
     return(
         <>
-            <h1>Context Child {useName}</h1>
-            <h1>Context Child {useName1}</h1>
+            <h2>Context Child {useName}</h2>
+            <h2>Context Child {useName1}</h2>
 
 
         </>

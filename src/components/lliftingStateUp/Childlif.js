@@ -4,7 +4,7 @@ function Childlif(props){
 
     return (
         <>
-            <h1>Child</h1>
+            <h2>Child</h2>
             <button onClick={()=>{props.getData(' yeyy here i am')}}>Change Message</button>
         </>
     )

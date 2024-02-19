@@ -12,7 +12,7 @@ function Parentlif(){
 
         return (
             <>
-                <h1>Parent Data</h1>
+                <h2>Parent Data</h2>
                 <h2>{message}</h2>
                 <Childlif getData={getData}>
 
