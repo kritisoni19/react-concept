@@ -1,22 +1,28 @@
+import { useRef, useState } from "react";
 
-import {useRef, useState} from 'react';
+function RefHook() {
+  const email = useRef("");
+  const password = useRef("");
+  const [show, setShow] = useState(false);
 
-function RefHook(){
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(email, password.current.value);
+    setShow(true);
+  };
 
-    const [name, setName] = useState('')
+  return (
+    <>
+      <h2>Forms Using useRef</h2>
+      <form onSubmit={handleSubmit}>
+        <input type="name" ref={email} />
+        <input type="password" ref={password} />
+        <button type="submit">Submit</button>
 
-    const refElement = useRef();
-    const submitHandle = ()=>{
-        refElement.current.style.color = 'yellow'
-    }
-    return (
-        <>
-            <h2> uSe ref Hook</h2>
-            {name}
-            <input type='text' ref={refElement}  onChange={(e)=>{setName(e.target.value)}}/>
-            <button onClick={submitHandle}>Submit</button>
-        </>
-    )
+        {show && <p>{email.current.value}</p>}
+      </form>
+    </>
+  );
 }
 
 export default RefHook;

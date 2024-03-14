@@ -41,8 +41,51 @@ h1{
   color:red
 }
 
-table, tr,td{
+table, tr,td,th{
   border: 1px solid black;
   border-collapse: collapse;
 }
+table{
+  width: 100%;
+}
 
+ul{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ul li{
+  list-style-type: none;
+  margin: 5px;
+}
+li a{
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+  text-decoration: none;
+  border: 1px solid grey;
+  padding: 10px 20px;
+  background-color: aquamarine;
+  border-radius: 10px;
+}
+
+.center_div{
+  width: 800px;
+  margin: 0 auto;
+}
+
+.toggleHoc{
+  border: 6px solid black;
+  font-size: 30px;
+  height: 400px;
+  width:400px
+
+}
+
+.isdark{
+  background-color: grey;
+}
+
+.islight{
+  background-color: pink;
+}
