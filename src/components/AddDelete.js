@@ -19,7 +19,7 @@ function AddDelete(){
         setEntername('')
     }
 
-    const deleteHandle =(index)=>{
+    const deleteHandle = (index)=>{
         const copyfiler = [...showUi];
          copyfiler.splice(index,1);
         setShowUi(copyfiler);

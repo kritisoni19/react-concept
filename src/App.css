@@ -47,12 +47,17 @@ table, tr,td,th{
 }
 table{
   width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-ul{
-  display: flex;
-  align-items: center;
+.ulList{
+  display: grid;
   justify-content: center;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(4, 4fr);
+  column-gap: 14px;
+  row-gap: 20px;
 }
 ul li{
   list-style-type: none;
@@ -88,4 +93,10 @@ li a{
 
 .islight{
   background-color: pink;
+}
+
+.bodyDiv{
+  height: 300px;
+  width: 300px;
+  border: 2px solid black;
 }

@@ -12,6 +12,7 @@ function UseMemoHooks(){
         setNum(num +1)
         console.log(num+1)
     }
+
     const minusHandle = ()=>{
         setminus(minus -1)
         console.log(minus-1)
@@ -30,10 +31,9 @@ function UseMemoHooks(){
         <>
         <h1>Use Memo Examples</h1>
         <h1>{num}</h1>
-         <button onClick={addHandle}> Addition </button>
-         <h1>{minus}</h1>
-         <button onClick={minusHandle}> Subtract </button>
-
+        <button onClick={addHandle}> Addition </button>
+        <h1>{minus}</h1>
+        <button onClick={minusHandle}> Subtract </button>
         <h1>{multiplication}</h1> 
         </>
     )

@@ -20,3 +20,4 @@ const  HigherOrder = (OriginalComponent)=>{
 
 
 export default HigherOrder;
+

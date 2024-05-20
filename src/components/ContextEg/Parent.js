@@ -1,22 +1,19 @@
-import React, { createContext } from "react";
+import React from "react";
 import Child from "./Child";
 
-const myContext =  createContext();
-const myContext1 =  createContext();
+import UserContext from './UserContext';
 
+
+// Modifying context
 function Parent(){
-
-
-    let name= 'Kriti Gaurav';
-    let engdate = '22jan'
 
     return(
         <>
-            <myContext.Provider value={name}>
-             <myContext1.Provider value={engdate}>
+            {/* <UserContext.Provider value={name}> */}
+             <UserContext.Provider value={{name:'Kiara Advani',interest:'Singing'}}>
                 <Child/>
-                </myContext1.Provider>
-            </myContext.Provider>
+            </UserContext.Provider>
+            {/* </UserContext.Provider> */}
         </>
     )
 
@@ -24,4 +21,4 @@ function Parent(){
 
 // we can not change the value of context otherwise it will overwrite
 export default Parent;
-export {myContext,myContext1}
+

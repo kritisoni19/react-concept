@@ -10,6 +10,11 @@ import { Provider } from 'react-redux';
 import store from './utils/store';
 import Alert from './components/Alert';
 import HigherOrder from './components/HOC/HigherOrder';
+import StopWatch from './components/StopWatch';
+import Practice from './components/Practice';
+import Accordion from './components/Accordion';
+import Parent from './components/ContextEg/Parent';
+import Debounce from './components/Debounce';
 
 function App() {
 
@@ -46,8 +51,27 @@ function App() {
         {
           path:'/hoc',
           element:<HigherOrder/>
+        },
+        {
+          path:'/stopwatch',
+          element:<StopWatch/>
+        },
+        {
+          path:'/practice',
+          element:<Practice/>
+        },
+        {
+          path:'/accordion',
+          element:<Accordion/>
+        },
+        {
+          path:'/contexteg',
+          element:<Parent/>
+        },
+        {
+          path:'/debounce',
+          element:<Debounce/>
         }
-
       ]
     },
   

@@ -1,10 +1,9 @@
 
-import { useEffect, useState } from "react";
+import { useEffect, useState ,Fragment} from "react";
 
 function FetchData(){
 
     const [data, setData] = useState([]);
-
 const getData = async()=>{
     const data = await fetch('https://jsonplaceholder.typicode.com/todos');
     const result = await data.json();
@@ -13,9 +12,13 @@ const getData = async()=>{
 }
 
     useEffect(()=>{
-        getData()
+        getData();
     },[])
-    return <>
+
+    
+    return data.length === 0? 'Loading.....': 
+    
+    <>
         <h2>
             Display API Data
         </h2>
@@ -31,12 +34,10 @@ const getData = async()=>{
                 </thead>
                     <tbody>
                 {
-                    data.map((e)=>{
-                        return  <tr key={e.id}>
-                            <td>{e.id}</td>
-                            <td>{e.title}</td>
-                            <td>{e.completed}</td>
-                            </tr>
+                    data.map((e,index)=>{
+                        return  <Fragment key={index}>
+                        <p>{e.title}</p>
+                        </Fragment>
                     })
                     
                 }

@@ -5,7 +5,7 @@ import '../App.css';
 function DarkTheme(){
 
     const [isdark, setIsDark] = useState(true);
-    
+ 
    
 
 
@@ -17,7 +17,7 @@ function DarkTheme(){
     return <>
         <h1>
             Dark DarkTheme
-
+            {/* {(theme? 'themedark': 'theme')} */}
             <div className={(isdark && 'isdark')}>
              <button onClick={isDarkToggle}>Toggle to dark</button>
             </div>
