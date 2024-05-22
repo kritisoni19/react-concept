@@ -70,6 +70,11 @@ function Menu() {
               Debounce page
             </Link>
           </li>
+          <li>
+            <Link to='/todolist'>
+              Todo List Page
+            </Link>
+          </li>
         </ul>
       </nav>
 

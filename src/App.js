@@ -15,6 +15,7 @@ import Practice from './components/Practice';
 import Accordion from './components/Accordion';
 import Parent from './components/ContextEg/Parent';
 import Debounce from './components/Debounce';
+import TodoList from './components/Todo/TodoList';
 
 function App() {
 
@@ -71,6 +72,10 @@ function App() {
         {
           path:'/debounce',
           element:<Debounce/>
+        },
+        {
+          path:'/todolist',
+          element:<TodoList/>
         }
       ]
     },
