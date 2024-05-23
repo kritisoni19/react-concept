@@ -8,7 +8,9 @@ function TodoList(){
     const [todoData, setTodoData] = useState([]);
     // input value print
     const [inputChangeValue, setInputChangeValue] = useState('')
-    const [isEditEnable, setIsEditEnable] = useState(false)
+    const [isEditEnable, setIsEditEnable] = useState(false);
+    // need another state for updating the current index
+    const [currentTodoIndex, setCurrentTodoIndex] = useState('');
 
   
     const formSubmitHandle =(e)=>{
@@ -44,11 +46,27 @@ function TodoList(){
     const editHandle = (todoItemText)=>{
         console.log('sdfds')
         setIsEditEnable(true)
-        setInputChangeValue(todoItemText.text)
+        setInputChangeValue(todoItemText.text);
+        setCurrentTodoIndex(todoItemText.id);
     }
 
     const updateHandle =(e)=>{
         e.preventDefault()
+        console.log('hh', inputChangeValue);
+        // uppdating the input value
+        let updatedChangeValue = inputChangeValue;
+
+        let updatedTodos = todoData.map((item)=>{
+            if(item.id === currentTodoIndex){
+                item.text = updatedChangeValue;
+            }
+            return item;
+        })
+        setTodoData([...updatedTodos])
+        window.localStorage.setItem('todoData',JSON.stringify(updatedTodos))
+        setIsEditEnable(false);
+        setInputChangeValue('')
+
     }
     useEffect(()=>{
         let todoStayPage = JSON.parse(window.localStorage.getItem('todoData'));
@@ -74,7 +92,10 @@ function TodoList(){
 
             {isEditEnable &&      <EditTodoForm updateHandle={updateHandle} 
                 inputChangeValue={inputChangeValue} 
-                setInputChangeValue={setInputChangeValue}/>}
+                setInputChangeValue={setInputChangeValue}
+                setIsEditEnable ={setIsEditEnable}                />
+                
+            }
        
 
             {

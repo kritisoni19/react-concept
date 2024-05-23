@@ -10,3 +10,6 @@ I used to practice react daily for brushing up my skills
 
 22 may 2024
 - Todo list add, delete
+
+23 May 2024
+- todo update
