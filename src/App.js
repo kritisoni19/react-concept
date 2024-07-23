@@ -16,6 +16,7 @@ import Accordion from './components/Accordion';
 import Parent from './components/ContextEg/Parent';
 import Debounce from './components/Debounce';
 import TodoList from './components/Todo/TodoList';
+import RegistrationForm from './components/Forms/RegistrationForm';
 
 function App() {
 
@@ -76,6 +77,10 @@ function App() {
         {
           path:'/todolist',
           element:<TodoList/>
+        },
+        {
+          path:'/registration',
+          element:<RegistrationForm/>
         }
       ]
     },

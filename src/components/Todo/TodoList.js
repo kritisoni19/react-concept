@@ -21,7 +21,7 @@ function TodoList(){
         if(todotext === ''){
             alert('Pleas add some task')
         }
-        setTodoData([...todoData,{id:id,text:todotext}])
+        // setTodoData([...todoData,{id:id,text:todotext}])
         // stooring the updated state
         setTodoData((prevState)=>{
             let updateTodo = [...todoData,{id:id,text:todotext}]
@@ -101,7 +101,8 @@ function TodoList(){
             {
               todoData.map((e)=>{
                 
-                return  <TodoItem key={e.id} todoItemText={e} deleteHandle={deleteHandle} editHandle = {editHandle}/>
+                return  <TodoItem key={e.id} todoItemText={e} 
+                deleteHandle={deleteHandle} editHandle = {editHandle}/>
                 
                
               })  

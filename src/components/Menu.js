@@ -75,6 +75,11 @@ function Menu() {
               Todo List Page
             </Link>
           </li>
+          <li>
+            <Link to='/registration'>
+              Registration From 
+            </Link>
+          </li>
         </ul>
       </nav>
 
