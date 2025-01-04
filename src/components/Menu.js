@@ -80,6 +80,9 @@ function Menu() {
               Registration From 
             </Link>
           </li>
+          <li><Link to='/multilingual'>
+            Multilingual 
+          </Link></li>
         </ul>
       </nav>
 

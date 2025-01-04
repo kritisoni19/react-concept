@@ -14,7 +14,7 @@ I used to practice react daily for brushing up my skills
 23 May 2024
 - todo update
 
-24 May 2024
-- 
+4 jan 2025
+- Multilingual UI 
 
 

@@ -17,6 +17,7 @@ import Parent from './components/ContextEg/Parent';
 import Debounce from './components/Debounce';
 import TodoList from './components/Todo/TodoList';
 import RegistrationForm from './components/Forms/RegistrationForm';
+import Multilingual from './components/Multilingual';
 
 function App() {
 
@@ -81,6 +82,10 @@ function App() {
         {
           path:'/registration',
           element:<RegistrationForm/>
+        },
+        {
+          path:'/multilingual',
+          element:<Multilingual/>
         }
       ]
     },

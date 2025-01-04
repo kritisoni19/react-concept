@@ -3,61 +3,41 @@ import { useState, useEffect } from "react";
 function StopWatch(){
 
   const [time, setTime] = useState(0);
-
-  // state to check stopwatch running or not
   const [isRunning, setIsRunning] = useState(false);
 
 
   useEffect(() => {
-    let intervalId;
+    let interval;
     if (isRunning) {
-      // setting time from 0 to 1 every 10 milisecond using javascript setInterval method
-      intervalId = setInterval(() => 
-        setTime(time + 1), 100);
+        interval = setInterval(() => {
+            setTime(prevTime => prevTime + 10);
+        }, 10);
+    } else {
+        clearInterval(interval);
     }
-    return () => clearInterval(intervalId);
-  }, [isRunning, time]);
+    return () => clearInterval(interval);
+}, [isRunning]);
 
-// Hours calculation
-const hours = Math.floor(time / 360000);
 
-// Minutes calculation
-const minutes = Math.floor((time % 360000) / 6000);
 
-// Seconds calculation
-const seconds = Math.floor((time % 6000) / 100);
+
 
 // Milliseconds calculation
-const milliseconds = time % 100;
+// const milliseconds = time % 100;
 
     // Method to start and stop timer
-    const startAndStop = () => {
-      setIsRunning(!isRunning);
-    };
-  
-    // Method to reset timer back to 0
-    const reset = () => {
-      setTime(0);
-    };
+
    
 
     return<>
 
 <div>
-<p className="stopwatch-time">
-        {hours}:
-        {minutes.toString().padStart(2, "0")}:
-        {seconds.toString().padStart(2, "0")}:
-        {milliseconds.toString().padStart(2, "0")}
-      </p>
-      {time}
-    
-        <button className="stopwatch-button" onClick={startAndStop}>
-          {isRunning ? "Stop" : "Start"}
-        </button>
-        <button className="stopwatch-button" onClick={reset}>
-          Reset
-        </button>
+<h1>{("0" + Math.floor((time / 60000) % 60)).slice(-2)}:
+        {("0" + Math.floor((time / 1000) % 60)).slice(-2)}:
+        {("0" + ((time / 10) % 100)).slice(-2)}</h1>
+        <button onClick={() => setIsRunning(true)}>Start</button>
+        <button onClick={() => setIsRunning(false)}>Stop</button>
+        <button onClick={() => setTime(0)}>Reset</button>
 </div>
     </>
 }
